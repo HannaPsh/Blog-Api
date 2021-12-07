@@ -11,8 +11,22 @@
         <h1>New post</h1>
 
         <form id="create-pun-form">
+            <label for="">Title</label>
+            <textarea name="title" id="title-textarea" cols="30" rows="10"></textarea>
             <label for="">Content</label>
             <textarea name="content" id="content-textarea" cols="30" rows="10"></textarea>
+            <label for="">Author</label>
+            <textarea name="author" id="author-textarea" cols="30" rows="10"></textarea>
+            <label for="">Tags</label>
+            <select name="tags" id="tags" size="7" multiple="multiple">
+                <option value="tagOne">  Tag-1</option>
+                <option value="tagTwo">  Tag-2</option>
+                <option value="tagThree">Tag-3</option>
+                <option value="tagFour"> Tag-4</option>
+                <option value="tagFive"> Tag-5</option>
+                <option value="tagSix">  Tag-6</option>
+                <option value="tagSeven">Tag-7</option>
+            </select>
 
             <input type="submit" value="Create">
             <a href="index.html">&#x2190; back</a>
