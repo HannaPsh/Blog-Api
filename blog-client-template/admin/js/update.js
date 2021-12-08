@@ -6,8 +6,6 @@ window.onload = function() {
 
     getPost(urlParams.get('id'));
 
-
-
     updatePunEvent(urlParams.get('id'))
 
 
