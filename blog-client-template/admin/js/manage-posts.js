@@ -19,7 +19,7 @@ async function fetchAllPuns() {
             <a class="delete-link" data-id="${post['_id']}" href="#">Delete</a> </td></tr>`;
 
         }
-
+        
         document.getElementById('tBody').innerHTML = postsHTML;
     } catch(error) {
         console.log(error);
