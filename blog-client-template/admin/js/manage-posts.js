@@ -25,19 +25,19 @@ async function fetchAllPuns() {
         console.log(error);
     }
 
-    deletePunEvent();
+    deletePost();
 }
 
 
 function deletePost() {
     let deletePosts = document.getElementsByClassName('delete-link');
-    console.log(deleteLinks);
+    
 
     for (let link of deletePosts) {
         link.addEventListener('click', async function(e) {
             e.preventDefault();
 
-            // console.log(e.target.dataset.id);
+            console.log(e.target.dataset.id);
 
             try {
                 await fetch('http://localhost:5000/posts/' + e.target.dataset.id,
