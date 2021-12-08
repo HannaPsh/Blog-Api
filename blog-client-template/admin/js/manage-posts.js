@@ -7,18 +7,20 @@ async function fetchAllPuns() {
         let response = await fetch('http://localhost:5000/posts');
         let posts = await response.json();
         console.log(posts);
-
+        
         let postsHTML = '';
+        /*let tags = posts.filter(posts => posts.tags);
+        console.log(tags);*/
         for(let post of posts) {
             let postDate = new Date(post.date);
             let formatedDate = `${postDate.getFullYear()}-${postDate.getMonth() + 1}-${postDate.getDate()} ${postDate.getHours()}:${postDate.getMinutes()}`
-
+            console.log(post.tags);
             console.log(post['_id'])
             postsHTML += `<tr><td>${post.title}</td>
             <td>${post.author}</td> <td>${post.tags}</td> <td>${formatedDate}</td> <td> <a href="update-post.html?id=${post['_id']}">Update</a> |
             <a class="delete-link" data-id="${post['_id']}" href="#">Delete</a> </td></tr>`;
 
-        }
+        } 
         
         document.getElementById('tBody').innerHTML = postsHTML;
     } catch(error) {

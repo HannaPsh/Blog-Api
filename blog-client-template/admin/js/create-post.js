@@ -7,15 +7,26 @@ function submitBlogPost() {
 
     blogPost.addEventListener('submit', async function(e) {
         e.preventDefault();
-
+        
         let blogContent = new FormData(blogPost);
         let blogContentObject = {
             "title"  : blogContent.get('title'),
             "content": blogContent.get('content'),
             "author" : blogContent.get('author'),
-            "tags"   : blogContent.get('tags')
+            "tags"   : getTags()
         }
 
+        function getTags() {
+            var selected = [];
+            for (var option of document.getElementById('tags').options)
+            {
+                if (option.selected) {
+                    selected.push(option.value);
+                }
+            }
+            return selected;
+        }
+        
         try {
             await fetch('http://localhost:5000/posts', {
                 method: 'POST',
@@ -31,3 +42,4 @@ function submitBlogPost() {
         }
     });
 }
+
