@@ -29,18 +29,18 @@ async function fetchAllPuns() {
 }
 
 
-function deletePunEvent() {
-    let deleteLinks = document.getElementsByClassName('delete-link');
+function deletePost) {
+    let deletePosts = document.getElementsByClassName('delete-link');
     console.log(deleteLinks);
 
-    for (let link of deleteLinks) {
+    for (let link of deletePosts) {
         link.addEventListener('click', async function(e) {
             e.preventDefault();
 
             // console.log(e.target.dataset.id);
 
             try {
-                await fetch('http://localhost:5000/post/' + e.target.dataset.id,
+                await fetch('http://localhost:5000/posts/' + e.target.dataset.id,
                     {
                         method: 'DELETE'
                     }
@@ -50,7 +50,7 @@ function deletePunEvent() {
             } catch(error) {
                 console.log(error)
             }
-
+            
         })
     }
 }
