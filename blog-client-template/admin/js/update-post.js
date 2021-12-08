@@ -18,7 +18,7 @@ window.onload = function() {
 
 async function getPun(id) {
     try {
-        let response = await fetch('https://puns-app.herokuapp.com/puns/' + id);
+        let response = await fetch('http://localhost:5000/posts' + id);
         let pun = await response.json();
 
         document.getElementById('content-textarea').value = pun.content;
@@ -30,7 +30,7 @@ async function getPun(id) {
 
 
 function updatePunEvent(id) {
-    let form = document.getElementById('update-pun-form');
+    let form = document.getElementById('update-Post-form');
     form.addEventListener('submit', async function(e) {
         e.preventDefault();
         let formData = new FormData(form);
