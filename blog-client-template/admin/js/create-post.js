@@ -12,6 +12,7 @@ function submitBlogPost() {
         let blogContentObject = {
             "title"  : blogContent.get('title'),
             "content": blogContent.get('content'),
+            "image"  : blogContent.get('image'),
             "author" : blogContent.get('author'),
             "tags"   : blogContent.get('tags')
         }
