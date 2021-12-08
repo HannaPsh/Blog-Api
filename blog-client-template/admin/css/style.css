@@ -84,7 +84,7 @@ a:hover {
     color: #aaa;
 }
 
-th{
+th, td{
     border: 1px solid black;
 }
 table{
