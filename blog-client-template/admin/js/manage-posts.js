@@ -29,7 +29,7 @@ async function fetchAllPuns() {
 }
 
 
-function deletePost) {
+function deletePost() {
     let deletePosts = document.getElementsByClassName('delete-link');
     console.log(deleteLinks);
 
