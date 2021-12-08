@@ -18,7 +18,7 @@ window.onload = function() {
 
 async function getPost(id) {
     try {
-        let response = await fetch('http://localhost:5000/posts' + id);
+        let response = await fetch('http://localhost:5000/posts/61b09ac0a9d65b1468c15b5b' + id);
         let data = await response.json();
 
         document.getElementById('content-textarea').value = post.content;
@@ -45,7 +45,7 @@ function updatePunEvent(id) {
 
 
         try {
-            await fetch('http://localhost:5000/posts' + id, {
+            await fetch('http://localhost:5000/posts/61b09ac0a9d65b1468c15b5b' + id, {
                 method: 'PATCH', 
                 headers: {
                     'Content-Type': 'application/json',
