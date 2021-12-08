@@ -10,11 +10,27 @@
         <h1>Update posts</h1>
         <form id="update-post-form">
             <label for="">Title</label>
-            <input type="text" placeholder="Title" id="title">
+            <input type="text" placeholder="Title" name="title" id="title">
             <label for="">Author</label>
-            <input type="text" placeholder="Author" id="author">
+            <input type="text" placeholder="Author" name="author" id="author">
             <label for="">Content</label>
             <textarea name="content" id="content-textarea" cols="30" rows="10"></textarea>
+
+            <select name="tags" id="tags" size="7" multiple>
+                <option value="economy">  Economy  </option>
+                <option value="finance">  Finance  </option>
+                <option value="health">   Health   </option>
+                <option value="food">     Food     </option>
+                <option value="politics"> Politics </option>
+                <option value="art">      Art      </option>
+                <option value="cars">     Cars     </option>
+                <option value="boats">    Boats    </option>
+                <option value="veichles"> Veichles </option>
+                <option value="housing">  Housing  </option>
+                <option value="interiour">Interiour</option>
+                <option value="workout">  Workout  </option>
+                <option value="fashion">  Fashion  </option>
+            </select>
 
             <input type="submit" value="Update">
             <a href="index.html">&#x2190; back</a>
