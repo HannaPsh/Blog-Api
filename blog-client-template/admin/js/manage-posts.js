@@ -1,8 +1,8 @@
 window.onload = function() {
-    fetchAllPuns();
+    fetchAllPosts();
 }
 
-async function fetchAllPuns() {
+async function fetchAllPosts() {
     try {
         let response = await fetch('http://localhost:5000/posts');
         let posts = await response.json();
@@ -15,7 +15,7 @@ async function fetchAllPuns() {
 
             console.log(post['_id'])
             postsHTML += `<tr><td>${post.title}</td>
-            <td>${post.author}</td> <td>${post.tags}</td> <td>${formatedDate}</td> <td> <a href="update-post.html?id=${post['_id']}">Update</a> |
+            <td>${post.author}</td> <td>${post.tags}</td> <td>${formatedDate}</td> <td> <a href="update.html?id=${post['_id']}">Update</a> |
             <a class="delete-link" data-id="${post['_id']}" href="#">Delete</a> </td></tr>`;
 
         }
