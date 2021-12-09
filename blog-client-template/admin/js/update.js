@@ -11,19 +11,27 @@ window.onload = function() {
     
 }
 
+jQuery("option").mousedown(function (e) {
+    e.preventDefault();
+    jQuery(this).toggleClass("selected");
+
+    jQuery(this).prop("selected", !jQuery(this).prop("selected"));
+    return false;
+  });
 
 async function getPost(id) {
     try {
         let response = await fetch('http://localhost:5000/posts/' + id);
         let post = await response.json();
 
-        document.getElementById('content-textarea').value = post.content;
+        document.getElementById('content').value = post.content;
 
         document.getElementById('title').value = post.title;
 
         document.getElementById('author').value = post.author;
 
         document.getElementById('tags').value = post.tags;
+        
 
     } catch(error) {
         console.log(error);
@@ -41,8 +49,19 @@ function updatePostEvent(id) {
             "content": formData.get('content'),
             "title": formData.get('title'),
             "author": formData.get('author'),
-            "tags": formData.get('tags'),
+            "tags"   : getTags()
+    }
+
+    function getTags() {
+        var selected = [];
+        for (var option of document.getElementById('tags').options)
+        {
+            if (option.selected) {
+                selected.push(option.value);
+            }
         }
+        return selected;
+    }
 
     
 
