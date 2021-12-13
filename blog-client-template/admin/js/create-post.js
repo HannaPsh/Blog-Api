@@ -29,7 +29,7 @@ function submitBlogPost() {
         // Creates an array to collect if the user chooses more then one tag, in order to write put all the tags in the post
         function getTags() {
             var selected = [];
-            for (var option of document.getElementById('tags').options)
+            for (let option of document.getElementById('tags').options)
             {
                 if (option.selected) {
                     selected.push(option.value);
