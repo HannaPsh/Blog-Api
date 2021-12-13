@@ -5,7 +5,19 @@
 body {
     background-color:  rgba(212, 205, 205, 0.692);
 }
-
+img{
+    align-self:center;
+    border-radius: 10px;
+  
+}
+#main{
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #999;
+    background-color: white;
+    border-radius: 10px;
+    margin: 10px 0;
+}
 
 #container {
     width: 600px;
@@ -31,10 +43,23 @@ select {
     border: 1px solid #333;
 }
 
+
 input {
     padding: 10px;
+    color:rgba(42, 42, 187, 0.692);
 }
+input:hover{
+    
+        background-color:rgba(204, 204, 255, 0.692);
+        color: black; /* SET COLOR IN BLACK */
+      }    
+  
 
+#update-post-form{
+
+    color: #005da6;;
+
+}
 form a {
     width: 100%;
     display: block;
@@ -43,7 +68,7 @@ form a {
 
 a {
     text-decoration: none;
-    color: darkblue;
+    color: rgba(42, 42, 187, 0.692);
 }
 
 a:hover {
@@ -93,4 +118,5 @@ table{
 }
 h1{
     color: #005da6;
+  
 }
