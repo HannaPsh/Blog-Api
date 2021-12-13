@@ -2,23 +2,34 @@ window.onload = function () {
   fetchAllPuns();
 };
 
-let arrayImg = ["4375581.jpg", "6584451.jpg", "6060285.png", "6584600.jpg"];
+let arrayImg = ["picture.jpg", "css.jpg", "javascript.jpg","html.jpg","git.jpg","api.png","node.png","react.jpg","ux.jpg","vue.png","angular.jpg"];
 
 async function fetchAllPuns() {
   try {
     let response = await fetch("http://localhost:5000/posts");
     let posts = await response.json();
-    console.log(posts);
-    let element = -1;
+    let element;
     let postsHTML = "";
     for (let post of posts) {
-      if (element < arrayImg.length-1) {
-        element++;
-        console.log(element);
-      } 
-      else{
-        element = 0;
+      for (let i of arrayImg) {
+        if (i.slice(0, -4) == post.tags[0]){
+          element = arrayImg.indexOf(i); 
+        }/* else if(!i.slice(0, -4) == post.tags[0]) {
+          element=0;
+        } */
+        /* if (post.tags.some( i + ".jpg")) { */
+       /*  const even = (element) => element % 2 === 0;
+const match = (i) => i.slice(0, -4) == post.tags[0];
+        console.log( i.slice(0, -4) + "och" + post.tags[0]  + " "  + post.tags.some(match)); */
+        /* element = arrayImg.indexOf(i); */
       }
+
+      /* */
+
+      /* else {
+          element = 0;
+        } */
+
       let postDate = new Date(post.date);
       let formatedDate = `${postDate.getFullYear()}-${
         postDate.getMonth() + 1
@@ -32,12 +43,19 @@ async function fetchAllPuns() {
       postsHTML += `
                 
                 <li class="list-group-item" id="parent">
-                <div id="leftSide"> <img src = "${arrayImg[element]}" width="100%" height="70%" id="img"> </div>
-                   <div id="rightSide"> <h2>${post.title}</h2> <span class="date">${formatedDate}</span> <br> <span class="author">Author: ${post.author}</span>
+                <div id="leftSide"> <img src = "${
+                  arrayImg[element]
+                }" width="100%" height="auto" id="img"> </div>
+                   <div id="rightSide"> <h2>${
+                     post.title
+                   }</h2> <span class="date">${formatedDate}</span> <br> 
+                   <span class="author">Author: ${post.author}</span>
 
                     <p>${post.content}</p>
                     <hr>
-                    <span class="date">Tags: ${post.tags}</span></div></li>
+                    <span class="date">Tags: ${post.tags.join(
+                      " "
+                    )}</span></div></li>
                     `;
     }
     document.getElementById("post-list").innerHTML = postsHTML;

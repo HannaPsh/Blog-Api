@@ -1,53 +1,58 @@
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="css/style.css">
-</head>
-<body>
-
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
     <div id="container">
-        <h1>New post</h1>
+      <h1>New post</h1>
 
-        <form id="create-blog-post">
-            <label for="">Title</label>
-            <textarea name="title" id="title-textarea" cols="30" rows="10"></textarea>
-            <label for="">Content</label>
-            <textarea name="content" id="content-textarea" cols="30" rows="10"></textarea>
-            <label for="">Author</label>
-            <textarea name="author" id="author-textarea" cols="30" rows="10"></textarea>
-            <label for="">Tags</label>
-            <select name="tags" id="tags" size="7" multiple>
-                <option value="javascript"> Javascript </option>
-                <option value="angular">    Angular    </option>
-                <option value="css">        CSS        </option>
-                <option value="html">       HTML       </option>
-                <option value="worldpress"> Worldpress </option>
-                <option value="java">       Java       </option>
-                <option value="csharp">     C#         </option>
-                <option value="php">        PHP        </option>
-                <option value="python">     Python     </option>
-                <option value="nodejs">     Node.js    </option>
-                <option value="docker">     Docker     </option>
-                <option value="git">        Git        </option>
-                <option value="typescript"> Typescript </option>
-                <option value="linux">      Linux      </option>
-                <option value="vuejs">      Vue.js     </option>
-                <option value="redux">      Redux      </option>
-                <option value="kubernetes"> Kubernetes </option>
-            </select>
-         
-            <input type="submit" value="Create">
-            <a href="index.html">&#x2190; back</a>
-        </form>
+      <form id="create-blog-post">
+        <label for="">Title</label>
+        <textarea
+          name="title"
+          id="title-textarea"
+          cols="30"
+          rows="10"
+        ></textarea>
+        <label for="">Content</label>
+        <textarea
+          name="content"
+          id="content-textarea"
+          cols="30"
+          rows="10"
+        ></textarea>
+        <label for="">Author</label>
+        <textarea
+          name="author"
+          id="author-textarea"
+          cols="30"
+          rows="10"
+        ></textarea>
+        <label for="">Tags</label>
+        <select name="tags" id="tags" size="7" multiple>
+          <option value="react">React</option>
+          <option value="angular">Angular</option>
+          <option value="css">CSS</option>
+          <option value="html">HTML</option>
+          <option value="javascript">Javascript</option>
+          <option value="node">NodeJs</option>
+          <option value="vue">VueJs</option>
+          <option value="api">Api</option>
+          <option value="git">Git</option>
+          <option value="ux">UX</option>
+        </select>
+
+        <input type="submit" value="Create" />
+        <a href="index.html">&#x2190; back</a>
+      </form>
     </div>
 
-
-
-<!-- JQUERY JS -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <!-- JQUERY JS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 
     <script src="js/create-post.js"></script>
-</body>
+  </body>
 </html>
