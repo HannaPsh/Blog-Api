@@ -12,6 +12,7 @@ async function fetchAllPuns() {
     let element = -1;
     let postsHTML = "";
     for (let post of posts) {
+    
       if (element < arrayImg.length-1) {
         element++;
         console.log(element);
@@ -29,19 +30,24 @@ async function fetchAllPuns() {
       }`;
 
       console.log(post["_id"]);
+
+      console.log(post.tags);
+
       postsHTML += `
-                
                 <li class="list-group-item" id="parent">
                 <div id="leftSide"> <img src = "${arrayImg[element]}" width="100%" height="70%" id="img"> </div>
                    <div id="rightSide"> <h2>${post.title}</h2> <span class="date">${formatedDate}</span> <br> <span class="author">Author: ${post.author}</span>
-
                     <p>${post.content}</p>
                     <hr>
-                    <span class="date">Tags: ${post.tags}</span></div></li>
+                    <span class="date"><p class="tagStyle">${post.tags.join(' ')}</p></span></div></li>
                     `;
-    }
-    document.getElementById("post-list").innerHTML = postsHTML;
+
+      document.getElementById("post-list").innerHTML = postsHTML;
+    
+  }
   } catch (error) {
     console.log(error);
   }
-}
+} 
+
+
