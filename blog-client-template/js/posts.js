@@ -14,21 +14,8 @@ async function fetchAllPuns() {
       for (let i of arrayImg) {
         if (i.slice(0, -4) == post.tags[0]){
           element = arrayImg.indexOf(i); 
-        }/* else if(!i.slice(0, -4) == post.tags[0]) {
-          element=0;
-        } */
-        /* if (post.tags.some( i + ".jpg")) { */
-       /*  const even = (element) => element % 2 === 0;
-const match = (i) => i.slice(0, -4) == post.tags[0];
-        console.log( i.slice(0, -4) + "och" + post.tags[0]  + " "  + post.tags.some(match)); */
-        /* element = arrayImg.indexOf(i); */
+        }
       }
-
-      /* */
-
-      /* else {
-          element = 0;
-        } */
 
       let postDate = new Date(post.date);
       let formatedDate = `${postDate.getFullYear()}-${
