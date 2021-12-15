@@ -140,11 +140,7 @@ a:hover {
 .banner-link:hover {
   color: yellow;
 }
-/* #underline{
-      color: #005da6;
-      font-weight:bold;
-  }
-   */
+
 #parent {
   display: grid;
   grid-template-columns: 1fr 2fr;
@@ -163,8 +159,9 @@ post.tags {
 
 .tagStyle {
   background-color: rgb(233, 229, 229);
-  color:rgb(5, 5, 173);
+  color: #005da6;
   margin-left: 10px;
+  border-radius: 3px;
 }
 
 .tagListStyle {
