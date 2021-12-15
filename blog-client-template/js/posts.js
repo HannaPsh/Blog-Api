@@ -10,7 +10,9 @@ async function fetchAllPuns() {
     let posts = await response.json();
     let element;
     let postsHTML = "";
+
     for (let post of posts) {
+
       for (let i of arrayImg) {
         if (i.slice(0, -4) == post.tags[0]){
           element = arrayImg.indexOf(i); 
@@ -18,6 +20,7 @@ async function fetchAllPuns() {
       }
 
       let postDate = new Date(post.date);
+
       let formatedDate = `${postDate.getFullYear()}-${
         postDate.getMonth() + 1
       }-${
@@ -26,24 +29,26 @@ async function fetchAllPuns() {
         (postDate.getMinutes() < 10 ? "0" : "") + postDate.getMinutes()
       }`;
 
+      let allTags = "";
+
+      for (let tag of post.tags) {
+        allTags += `
+        <li class="tagStyle">${tag}</li>
+        `;
+     }
       console.log(post["_id"]);
       postsHTML += `
-                
                 <li class="list-group-item" id="parent">
-                <div id="leftSide"> <img src = "${
-                  arrayImg[element]
-                }" width="100%" height="auto" id="img"> </div>
-                   <div id="rightSide"> <h2>${
-                     post.title
-                   }</h2> <span class="date">${formatedDate}</span> <br> 
+                <div id="leftSide"> <img src = "${arrayImg[element]}" 
+                width="100%" height="auto" id="img"> </div>
+                   <div id="rightSide"> <h2>${post.title}</h2> 
+                   <span class="date">${formatedDate}</span> <br> 
                    <span class="author">Author: ${post.author}</span>
-
                     <p>${post.content}</p>
                     <hr>
-                    <span class="date">Tags: ${post.tags.join(
-                      " "
-                    )}</span></div></li>
+                    <span class="date"><ul class="tagListStyle">${allTags}</ul></span></div></li>
                     `;
+                    
     }
     document.getElementById("post-list").innerHTML = postsHTML;
   } catch (error) {
