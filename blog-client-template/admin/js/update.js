@@ -31,14 +31,11 @@ async function getPost(id) {
         document.getElementById('author').value = post.author;
 
         document.getElementById('tags').value = post.tags;
-        
 
     } catch(error) {
         console.log(error);
     }
 }
-
-
 
 function updatePostEvent(id) {
     let form = document.getElementById('update-post-form');
