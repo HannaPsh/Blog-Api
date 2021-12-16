@@ -43,15 +43,25 @@ async function fetchAllPosts() {
       console.log(post["_id"]);
       postsHTML += `
                 <li class="list-group-item" id="parent">
+
                 <div id="leftSide"> <img src = "${arrayImg[element]}" 
-                width="100%" height="auto" id="img"> </div>
-                   <div id="rightSide"> <h2>${post.title}</h2> 
-                   <span class="date">${formatedDate}</span> <br> 
-                   <span class="author">Author: ${post.author}</span>
-                    <p>${post.content.slice(0,100)}<br><a class="readMoreBtn" href="post.html?id=${post._id}">Read More</a></p>
-                    <hr>
-                    <span class="date"><ul class="tagListStyle">${allTags}</ul></span></div></li>
-                    `;
+                width="100%" height="auto" id="img"> 
+                </div>
+
+                <div id="rightSide"> <h2>${post.title}</h2> 
+
+                <span class="date">${formatedDate}</span> 
+                <br> 
+                <span class="author">Author: ${post.author}</span>
+
+                <p>
+                  ${post.content.slice(0,100)}<br>
+                  <a class="readMoreBtn" href="post.html?id=${post._id}">Read More</a>
+                </p>
+
+                <hr>
+                <span class="date"><ul class="tagListStyle">${allTags}</ul></span></div></li>
+                `;
                     
     }
     document.getElementById("post-list").innerHTML = postsHTML;

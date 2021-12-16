@@ -48,7 +48,7 @@ async function getSpecificPost(id) {
     </div>
 
     <div id="content">
-    <p>${post.content}<p>
+    <p class="blogPostContent">${post.content}<p>
     <hr>
     </div>
 

@@ -46,12 +46,6 @@ a:hover {
   flex-direction: column-reverse;
 }
 
-/* .targetedPostContainer {
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: column;
-} */
-
 .list-group-item {
   width: 100%;
   padding: 10px;
@@ -247,3 +241,6 @@ p {
   color: blueviolet;
 }
 
+.blogPostContent {
+  white-space: pre-wrap;
+}
