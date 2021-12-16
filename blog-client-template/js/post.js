@@ -49,6 +49,7 @@ async function getSpecificPost(id) {
 
     <div id="content">
     <p class="blogPostContent">${post.content}<p>
+    <a href="index.html" class="blogPostLink"><h4>Back To Blog Feed</h4></a>
     <hr>
     </div>
 

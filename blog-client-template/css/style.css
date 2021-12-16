@@ -244,3 +244,7 @@ p {
 .blogPostContent {
   white-space: pre-wrap;
 }
+
+.blogPostLink:hover {
+  color:blueviolet;
+}
