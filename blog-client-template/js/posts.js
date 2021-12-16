@@ -44,7 +44,7 @@ async function fetchAllPuns() {
                    <div id="rightSide"> <h2>${post.title}</h2> 
                    <span class="date">${formatedDate}</span> <br> 
                    <span class="author">Author: ${post.author}</span>
-                    <p>${post.content}</p>
+                    <p>${post.content.slice(0,100)}<br><a href="post.html?id=${post._id}">Read More</a></p>
                     <hr>
                     <span class="date"><ul class="tagListStyle">${allTags}</ul></span></div></li>
                     `;

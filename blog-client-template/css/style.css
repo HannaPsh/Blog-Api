@@ -46,15 +46,44 @@ a:hover {
   flex-direction: column-reverse;
 }
 
+.targetedPostContainer {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+}
+
 .list-group-item {
   width: 100%;
   padding: 10px;
   border: 1px solid #999;
   background-color: white;
-  /*display: flex;
-     justify-content: space-between; */
   border-radius: 10px;
   margin: 10px 0;
+}
+
+.targeted-list {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #999;
+  background-color: white;
+  border-radius: 10px;
+  margin: 10px 0;
+  padding-left: 17%;
+}
+
+.postImg {
+  margin-left: 10%;
+}
+
+.targetedListObject{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-left: 280px;
+}
+
+.postContent {
+  width: 150%;
 }
 
 #post-list li p {
@@ -140,11 +169,16 @@ a:hover {
 .banner-link:hover {
   color: yellow;
 }
-/* #underline{
-      color: #005da6;
-      font-weight:bold;
-  }
-   */
+
+.banner-link-blogfeed {
+  text-align: center;
+  position: absolute;
+  top: 90%;
+  left: 7%;
+  transform: translate(-50%, -50%);
+  color: #fff;
+}
+
 #parent {
   display: grid;
   grid-template-columns: 1fr 2fr;
@@ -163,8 +197,9 @@ post.tags {
 
 .tagStyle {
   background-color: rgb(233, 229, 229);
-  color:rgb(5, 5, 173);
+  color: #005da6;
   margin-left: 10px;
+  border-radius: 3px;
 }
 
 .tagListStyle {
