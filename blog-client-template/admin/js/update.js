@@ -11,6 +11,7 @@ window.onload = function() {
     
 }
 
+// Alouds the user to choose several options withput pressing CTRL
 jQuery("option").mousedown(function (e) {
     e.preventDefault();
     jQuery(this).toggleClass("selected");
@@ -19,6 +20,7 @@ jQuery("option").mousedown(function (e) {
     return false;
   });
 
+  // Gets the selected post
 async function getPost(id) {
     try {
         let response = await fetch('http://localhost:5000/posts/' + id);
@@ -37,6 +39,7 @@ async function getPost(id) {
     }
 }
 
+// Updates the post via the submit Btn
 function updatePostEvent(id) {
     let form = document.getElementById('update-post-form');
     form.addEventListener('submit', async function(e) {
@@ -49,6 +52,7 @@ function updatePostEvent(id) {
             "tags"   : getTags()
     }
 
+    // Creates an array to collect if the user chooses more then one tag, in order to put all the tags in the post
     function getTags() {
         var selected = [];
         for (var option of document.getElementById('tags').options)
@@ -61,7 +65,7 @@ function updatePostEvent(id) {
     }
 
     
-
+        // Updates the post via PATCH
         try {
             await fetch('http://localhost:5000/posts/' + id, {
                 method: 'PATCH', 

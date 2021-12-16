@@ -2,18 +2,16 @@ window.onload = function() {
     fetchAllPosts();
 }
 
+// Gets all the posts with the API
 async function fetchAllPosts() {
-    // Gets all the posts with the API
     try {
         let response = await fetch('http://localhost:5000/posts');
         let posts = await response.json();
         console.log(posts);
         
         let postsHTML = '';
-        /*let tags = posts.filter(posts => posts.tags);
-        console.log(tags);*/
         
-        // Loops through all the objects and creates the blogposts
+        // Loops through all posts to get specific parts (author, title, tags etc)
         for(let post of posts) {
             let postDate = new Date(post.date);
             let formatedDate = `${postDate.getFullYear()}-${postDate.getMonth() + 1}-${(postDate.getDate()<10?'0':'') + postDate.getDate()} ${postDate.getHours()}:${(postDate.getMinutes()<10?'0':'') + postDate.getMinutes()}`
@@ -35,7 +33,7 @@ async function fetchAllPosts() {
     deletePost();
 }
 
-
+// Delets the targeted post
 function deletePost() {
     let deletePosts = document.getElementsByClassName('delete-link');
     
@@ -46,7 +44,7 @@ function deletePost() {
 
             console.log(e.target.dataset.id);
 
-            // Removes the targeted blogpost with the API + Blogpost ID
+            // Removes the targeted blogpost with the DELETE method + Blogpost ID
             try {
                 await fetch('http://localhost:5000/posts/' + e.target.dataset.id,
                     {

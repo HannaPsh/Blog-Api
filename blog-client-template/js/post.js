@@ -9,11 +9,13 @@ window.onload = function() {
 
 let arrayImg = ["picture.jpg", "css.jpg", "javascript.jpg","html.jpg","git.jpg","api.png","node.png","react.jpg","ux.jpg","vue.png","angular.jpg"];
 
+// Gets the selected post via the ID
 async function getSpecificPost(id) {
     try {
         let response = await fetch('http://localhost:5000/posts/' + id);
         let post = await response.json();
 
+        // Loops through the images 
             for (let i of arrayImg) {
               if (i.slice(0, -4) == post.tags[0]){
                 element = arrayImg.indexOf(i); 

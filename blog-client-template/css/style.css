@@ -141,6 +141,10 @@ a:hover {
   color: rgb(255, 255, 255);
 }
 
+.footer-link:hover {
+  color: yellow;
+}
+
 .banner-image {
   background-image: url(2586822.jpg);
   height: 50%;
@@ -177,6 +181,10 @@ a:hover {
   left: 7%;
   transform: translate(-50%, -50%);
   color: #fff;
+}
+
+.banner-link-blogfeed:hover {
+  color: yellow;
 }
 
 #parent {
@@ -233,5 +241,9 @@ post.tags {
 p {
   font-family: system-ui;
   letter-spacing:0.7px;
+}
+
+.readMoreBtn:hover {
+  color: blueviolet;
 }
 

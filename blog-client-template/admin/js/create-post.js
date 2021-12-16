@@ -11,6 +11,7 @@ jQuery("option").mousedown(function (e) {
     return false;
   });
 
+// Submits the userinput in to a post  
 function submitBlogPost() {
     let blogPost = document.getElementById('create-blog-post');
 
@@ -26,7 +27,7 @@ function submitBlogPost() {
             "tags"   : getTags()
         }
 
-        // Creates an array to collect if the user chooses more then one tag, in order to write put all the tags in the post
+        // Creates an array to collect if the user chooses more then one tag, in order to put all the tags in the post
         function getTags() {
             var selected = [];
             for (let option of document.getElementById('tags').options)
@@ -38,7 +39,7 @@ function submitBlogPost() {
             return selected;
         }
         
-        // Sends the form with the API
+        // Sends the form with the API and POST method
         try {
             await fetch('http://localhost:5000/posts', {
                 method: 'POST',
