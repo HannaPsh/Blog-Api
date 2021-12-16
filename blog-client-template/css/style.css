@@ -230,3 +230,8 @@ post.tags {
   padding:10px;
 }
 
+p {
+  font-family: system-ui;
+  letter-spacing:0.7px;
+}
+
