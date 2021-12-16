@@ -20,20 +20,37 @@ async function getSpecificPost(id) {
               }
             }
 
-let postHTML = "";
+            let postDate = new Date(post.date);
+            let formatedDate = `${postDate.getFullYear()}-${
+                postDate.getMonth() + 1
+              }-${
+                (postDate.getDate() < 10 ? "0" : "") + postDate.getDate()
+              } ${postDate.getHours()}:${
+                (postDate.getMinutes() < 10 ? "0" : "") + postDate.getMinutes()
+              }`;
+    let postHTML = "";
     postHTML = `
-    <li class="targeted-list" id="parent">
-    <div class="targetedPostContainer">
-    <div class="postImg"> <img src = "${arrayImg[element]}" 
-    width="50%" height="auto" id="img"> </div>
-    <div class="targetedListObject"> <h2>${post.title}</h2>
-    <span class="date">${post.date}</span> <br> 
-    <span class="author">Author: ${post.author}</span>
-    <span class="date"><ul class="tagListStyle">${post.tags}</ul></span>
+    <div  id="gridPost">
+
+    <div id="picture">
+    <img src = "${arrayImg[element]}" 
+    width="100%" height="auto" id="img"> </div>
+
+    <div id = "info">
+
+    <h2>${post.title}</h2>
+    <span class="date">Published: ${formatedDate}</span> <br> 
+    <span class="author">Author: ${post.author}</span> <br>
+    <span class="date">Tags: ${post.tags}</span>
+
     </div>
-    <p class="postContent">${post.content}<p>
+
+    <div id="content">
+    <p>${post.content}<p>
     <hr>
-    <span class="date"><ul class="tagListStyle">${post.tags}</ul></span></div></li>
+    </div>
+
+    </div>
     `;
 
     document.getElementById('post-show').innerHTML = postHTML;
